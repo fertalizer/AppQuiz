@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.mark.appquiz.R
+import com.mark.appquiz.databinding.FragmentOverviewBinding
 
 
 class OverviewFragment : Fragment() {
@@ -14,10 +16,15 @@ class OverviewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        val binding = FragmentO
 
-        return inflater.inflate(R.layout.fragment_overview, container, false)
+        val viewModel = ViewModelProvider(this).get(OverviewViewModel::class.java)
+
+        val binding = FragmentOverviewBinding.inflate(inflater)
+
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        return binding.root
     }
 
 }
