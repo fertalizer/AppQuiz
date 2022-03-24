@@ -23,6 +23,7 @@ class OverviewFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        binding.recycler.adapter = OverViewAdapter()
 
         return binding.root
     }

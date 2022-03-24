@@ -1,9 +1,12 @@
 package com.mark.appquiz.network
 
+import com.mark.appquiz.data.OverviewData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://raw.githubusercontent.com/"
 
@@ -17,7 +20,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface ApiService {
-    // TODO: 2022/3/24 Call Api
+    @GET("winwiniosapp/Android-APP-Practice/main/android.json")
+    suspend fun getOverviewData(): List<OverviewData>
 }
 
 object Api {
