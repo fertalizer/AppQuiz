@@ -34,14 +34,6 @@ fun bindImage(imageView: ImageView, imgUrl: String) {
     }
 }
 
-@BindingAdapter("tag")
-fun bindTags(textView: TextView, tag: String) {
-    tag?.let {
-        textView.visibility = View.VISIBLE
-        textView.text = it
-    }
-}
-
 @BindingAdapter("Int")
 fun bindIntToText(textView: TextView, number: Int) {
     val text = number.toString()
