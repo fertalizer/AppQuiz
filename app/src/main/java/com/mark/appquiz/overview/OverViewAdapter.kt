@@ -42,22 +42,22 @@ class OverViewAdapter: ListAdapter<OverviewData, RecyclerView.ViewHolder>(DiffCa
         RecyclerView.ViewHolder(binding.root) {
         fun bind(overviewData: OverviewData) {
             binding.overviewData = overviewData
-//            if (overviewData.tags.size > 2) {
-//                binding.type1Tag1.visibility = View.VISIBLE
-//                binding.type1Tag2.visibility = View.VISIBLE
-//                binding.type1Tag3.visibility = View.VISIBLE
-//                binding.type1Tag1.text = overviewData.tags[0]
-//                binding.type1Tag2.text = overviewData.tags[1]
-//                binding.type1Tag3.text = overviewData.tags[2]
-//            } else if (overviewData.tags.size > 1) {
-//                binding.type1Tag1.visibility = View.VISIBLE
-//                binding.type1Tag2.visibility = View.VISIBLE
-//                binding.type1Tag1.text = overviewData.tags[0]
-//                binding.type1Tag2.text = overviewData.tags[1]
-//            } else if(overviewData.tags.size > 0) {
-//                binding.type1Tag1.visibility = View.VISIBLE
-//                binding.type1Tag1.text = overviewData.tags[0]
-//            }
+            if (overviewData.tags.size > 2) {
+                binding.type2Tag1.visibility = View.VISIBLE
+                binding.type2Tag2.visibility = View.VISIBLE
+                binding.type2Tag3.visibility = View.VISIBLE
+                binding.type2Tag1.text = overviewData.tags[0]
+                binding.type2Tag2.text = overviewData.tags[1]
+                binding.type2Tag3.text = overviewData.tags[2]
+            } else if (overviewData.tags.size > 1) {
+                binding.type2Tag1.visibility = View.VISIBLE
+                binding.type2Tag2.visibility = View.VISIBLE
+                binding.type2Tag1.text = overviewData.tags[0]
+                binding.type2Tag2.text = overviewData.tags[1]
+            } else if(overviewData.tags.size > 0) {
+                binding.type2Tag1.visibility = View.VISIBLE
+                binding.type2Tag1.text = overviewData.tags[0]
+            }
             binding.executePendingBindings()
         }
     }
